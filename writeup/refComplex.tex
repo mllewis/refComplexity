@@ -1,0 +1,211 @@
+% refComplex Paper 
+% Annual Cognitive Science Conference 2014
+
+\documentclass[10pt,letterpaper]{article}
+
+% load packages
+\usepackage{cogsci}
+\usepackage{pslatex}
+\usepackage{apacite2}
+\usepackage{graphicx}
+
+
+% define header
+\title{The structure of the lexicon reflects principles of communication}
+\author{{\large \bf Molly Lewis} \\ \texttt{mll@stanford.edu}\\ Department of Psychology \\ Stanford University \\ 
+\And {\large \bf Elise Sugarman} \\ \texttt{elisesug@stanford.edu} \\ Department of Psychology \\ Stanford University \\ 
+\And {\large \bf Michael C. Frank} \\ \texttt{mcfrank@stanford.edu} \\ Department of Psychology \\ Stanford University \\ }
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We explore a previously undescribed regularity in  language: a bias for longer words to map to relatively more complex meanings. While  theories of communication make the more general prediction that longer utterances should be associated with more complex meanings,  this prediction has not yet been explored at the level of words. Through corpus analyses and experimental methods, we find evidence in support of a complexity bias in  word meanings. We conclude by discussing hypotheses about the nature of this bias.
+\\
+
+
+\textbf{Keywords:} 
+communication; pragmatics
+\end{abstract}
+
+%%%%%%%%% Introduction %%%%%%%%%%%
+\section{Introduction}
+Is the structure of language shaped by its use in communication? \citeA{hockett1960} argued that several major features of language---from its productivity to its arbitrary mappings from signifier to signified---emerge from communicative pressures. This kind of functional explanation has since been proposed for a wide range of phenomena, from the presence of ambiguity in language  \cite{piantadosi2011b} to the way languages organize the semantic space of kinship meaning  \cite{kemp2012kinship}. In our current study, we identify a regularity in the lexicon---that more complex ideas tend to be named by longer words---and investigate a potential communicative explanation.
+
+
+Several theories of communication  predict that longer utterances should be associated with more complex meanings (a {\it complexity bias}). More specifically, they predict that communicative pressures should lead to a complexity bias  that operates at the moment of language interpretation. \citeA{horn1984} proposed one such theory. He argued for a relationship between the cost of an utterance and the probability of meaning. He suggested that costlier phrases are associated with less probable meanings. For example,  the phrases ``I started the car" and ``I got the car to start" are denotationally equivalent (they both denote the successful starting of a car), but they differ in  cost in terms of  their utterance length. Horn's principle accounts for this difference as an asymmetry in the probabilities of meanings: The shorter form refers to the typical (more frequent) starting of a car, and thus the longer form refers to an atypical case, perhaps where the driver encountered difficulty. 
+
+
+Information theory also predicts a complexity bias that operates during online language interpretation. Under this theory, speakers optimize information transfer  (in terms of bits)  by keeping the amount of information conveyed  in a unit of language constant across the speech stream  \cite{aylett2004smooth, frank2008speaking}. This ``uniform information density'' hypothesis predicts as a straightforward consequence that a longer utterance should have a less predictable meaning.  Consistent with this prediction, speakers tend to increase the duration of a word prosodically in cases where the word is unpredictable (highly informative) given the linguistic context  \cite{aylett2004smooth}.
+
+
+Recent experimental data provide  additional evidence for a complexity bias operating at the moment of language interpretation. For example,  in an artificial language learning task, \citeA{fedzechkina2012language} found that learners tended to use case marking (i.e.\ longer referential forms) in cases where the sentence meaning was less predictable in the experimental context. \citeA{bergen2012} provide a more direct test of a complexity bias. In their task, partners were told that they were in an alien world with three objects of different base rate frequencies and three possible utterances of different monetary costs. Their task was to communicate about one of the objects using one of the available utterances. The results suggest that both the speaker and hearer expected costlier forms to refer to less frequent meanings, consistent with Horn's principle.
+
+A number of pieces of evidence thus corroborate proposals that communicative pressures lead to a complexity bias at the moment of language interpretation. In our work here, we asked: Do these communicative pressures have consequences beyond the moment of language interpretation? That is, do these communicative pressures  lead to the instantiation of a complexity bias in the lexicon? While this question has not been previously investigated, there is some  evidence to suggest that they might: words that are more predictable in their linguistic context are found to be shorter than words that are less predictable in their linguistic context \cite{piantadosi2011a}.  
+
+A substantial challenge in studying a complexity bias is the difficulty of defining complexity. We give an intuitive definition guiding our investigation, but we note that the proxies for complexity we use below are also consistent  with other definitions. Imagine a space of possible meanings as compositional semantic primitives. In this space, a more complex meaning would be one with more primitives in it. (In a probabilistic framework, having more units would also be correlated with having a lower overall probability).  
+
+We used both corpus analyses and experimental methods to explore a complexity bias in the lexicon. Analyses of existing corpora revealed that measures of referent complexity are positively correlated with measures of word length, suggesting that a complexity bias is indeed present in the lexicon. Evidence from three experiments also suggests that this bias guides inference in a novel word learning task, in both adults (Exp.\ 1 and 2) and preschoolers (Exp.\ 3). We conclude by discussing hypotheses about the source of these results and the relationship between them.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale = .47]{figs/corpus_plot.pdf}
+\end{center}
+\caption{Pearson correlations between number of letters in a word and complexity proxy.  Partial correlations are shown with a square (complexity proxy and length partialling out log frequency). Error bars represent 95\% CIs. Data are shown for four different corpora: The MRC corpus in English  \cite{wilson1988mrc}, a large English corpus normed for concreteness \cite{brysbaert2013},  an Italian corpus \cite{della2010beyond} and a French corpus \cite{desrochers2009subjective}.  }
+\label{fig:corpus_summary}
+\end{figure}
+
+
+
+%%%%%%%%% IN THE LEXICON %%%%%%%%% 
+\section{Complexity bias: Corpus evidence}
+Using existing corpora, we explored a complexity bias in the lexicon by examining the relationship between word length and reference complexity. Because we do not have a direct measure of complexity, we used the  measures  available in each corpus that seemed intuitively related to the notion of complexity. These were concreteness, familiarity, imageability, and abstractness. While these measures are likely imperfect proxies to the true construct of interest --- complexity --- they nonetheless allow for  an initial test of our hypothesis.
+
+In each corpus, we calculated the correlation between the available complexity proxies and word length in terms of number of letters.\footnote{Number of letters was selected as the measure of word length because it was available across all four corpora. Nonetheless, the relationship between word length and measures of complexity held for number of phonemes and number of syllables, when those measures were available.} We hypothesized that  words that were less familiar, less concrete,  less imageable and more abstract  would be longer than more familiar, more concrete, more imageable and less abstract words. 
+
+We analyzed four different corpora. The first corpus was the MRC Psycholinguistic Database \cite{wilson1988mrc}, which includes English words coded for various linguistic and psycholinguistic variables.  We also analyzed the \citeA{brysbaert2013} corpus that includes ratings of concreteness for over 35,000 English words. Additionally, to ensure that our results were not specific to the English lexicon, we analyzed an Italian corpus \cite{della2010beyond} and a French corpus \cite{desrochers2009subjective}. 
+
+Independent of complexity, spoken frequency is a well-documented correlate of word length. We controlled for this relationship statistically by calculating the correlation between word length and complexity proxy, partialling out the effect of frequency. For English, we used estimates of the log spoken frequency estimated from a corpora of transcripts from American English movies \cite<Subtlex-us database;>{brysbaert2009moving}. For the Italian and French corpora, we used measures of log  spoken frequency estimated from corpora in the target language. 
+
+
+\subsection{Results}
+In all four corpora, we found evidence that longer words are associated with more complex meanings (Fig.\ \ref{fig:corpus_summary}).\footnote{All code and data available at \url{http://github.com/mllewis/refComplex-cogsci}.} For each corpus, we calculated the Pearson correlation between word length in terms of number of letters and complexity proxy. 
+
+In the MRC corpus, there was a reliable negative correlation between number of letters and all three measures of complexity (concreteness: $r=-0.11$; familiarity: $r=-0.21$; imageability:  $r=-0.15$). However, when frequency was controlled for, only concreteness and imaginability remained negatively correlated with length (presumably due to the high correlation between log frequency and familiarity, $r=0.77$, relative to the correlation between log frequency and the other complexity proxies, e.g.\ imageability:  $r=-0.005$).
+
+  In the  \citeA{brysbaert2013} corpus, there was a strong negative relationship between concreteness ($r=-0.40$). In the Italian corpus, all four measures of complexity were reliably correlated with length (concreteness: $r=-0.35$; familiarity: $r=-0.26$; imageability:  $r=-0.38$; abstractness:  $r=0.34$).  Finally, there was a reliable correlation between word length and imageability in the French corpus ($r=-0.21$). Except for familiarity in the MRC corpus, all correlations remained reliable after partialling out the effect of log spoken frequency.
+
+Thus, across  four corpora, we considered a number of different proxies for complexity and, with the possible exception of familiarity, all suggest that longer words tend to be associated with more complex meanings. While conclusions  from these data depend on the extent to which our proxies are related to the true complexity construct, this analysis nonetheless provides suggestive evidence that the complexity bias predicted by theories of communication is also present in the structure of the lexicon.
+
+
+%%%%%%%%% IN THE MOMENT %%%%%%%%% 
+\section{Complexity bias: Experimental evidence}
+
+In addition to a complexity bias in the lexicon, we also predicted that speakers might be able to make use of this regularity to guide reference selection in a novel word learning task. We tested this prediction experimentally in three experiments with adults and children. In each experiment, we presented participants with two objects  and a novel word, and asked participants to identify the referent. One of the objects was visually simple and the other   visually complex. Across trials, we manipulated the length of the word. If a complexity bias guides reference selection, participants  should be more likely to map a long word to a complex object, relative to a simple object. The data support this hypothesis, suggesting that this bias is present in adults (Exp.\ 1 and 2) and develops in preschoolers (Exp.\ 3). 
+
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale = .4]{figs/screen_shot.png}
+\end{center}
+\caption{Example trial from Experiment 1a. }
+\label{fig:screen_shot}
+\end{figure}
+\subsection{Experiment 1a}%good geons (4)
+In Experiment 1, we probed the complexity bias in adults with  a forced choice (Exp.\ 1a) and betting measure (Exp.\ 1b).
+\subsubsection*{Methods} \hspace*{\fill} \\
+{ \it Participants. } We recruited 60 participants from Amazon Mechanical Turk, but excluded 11 for earlier participation in related experiments or failure to correctly answer a control question (identifying a familiar object). In this and the subsequent experiments, all reported results remain statistically significant when including these participants. \\
+{ \it Stimuli. } The referents were objects composed of a varying number of geometrical shapes.  Each geometric shape was a geon --- a representation that has been argued to be the primitive unit in the visual system for object recognition \cite{biederman1987}. The simple objects  were composed of a single geon and the complex objects were composed of five geons. There were eight simple items and eight complex items. The actual stimuli were adopted from \citeA{hayward1997}.
+The linguistic stimuli were novel words. There were seven short words  composed of  two syllables  (e.g., ``tupa," ``gabu," ``fepo") and seven long words composed of four syllables (e.g., ``tupabugorn," ``gaburatum," ``fepolopus").  \\
+
+{ \it Procedure. } Participants viewed a webpage that showed two objects and a word,  and were asked to select the referent (see Fig.\  \ref{fig:screen_shot}). Each participant completed four critical trials followed by a control trial. In the control trial, participants were asked to identify the referent among two known objects (e.g. cactus and sandwich).
+
+We manipulated two factors: word length and object complexity. On each trial, a simple and a complex object were presented. Word length was manipulated between participants, such that each participant saw only one word length across all four trials.
+\begin{figure*}[]
+\begin{center}
+\includegraphics[scale = .8]{figs/experimental_data.pdf}
+\end{center}
+\caption{Mean proportion selections (Exp.\ 1a and 3) or mean bets (Exp.\  1b and 2) to complex object for adults (left) and children (right). Error bars represent  95\% CIs as computed via non-parametric bootstrap (Exp.\  1a) and  parametric 95\% CIs (Exp.\  1b, 2, 3). Transparent bars represent baseline conditions.}
+\label{fig:experimental_data}
+\end{figure*}
+\subsubsection{Results}
+
+
+Participants selected the complex referent significantly more often  in the long word condition, relative to the short word condition ($\chi ^2(1) = 6.71$,  $p < .01$, $d=.46$; Fig.\ \ref{fig:experimental_data}). 
+
+
+\subsection{Experiment 1b} %good geons - betting (3)
+
+\subsubsection*{Methods} \hspace*{\fill} \\
+{ \it Participants. } We recruited 90 participants from Amazon Mechanical Turk. Five were excluded for earlier participation in related experiments or failure to correctly answer the control question.  \\
+{ \it Stimuli. } The stimuli were identical to Experiment 1a.
+{ \it Design. } 
+The procedure was identical to Experiment 1a except for the new measure. In this version of the experiment, participants  were asked to provide bets 0Ð-100 indicating their judgement, with a constraint that the bets on the two objects summed to 100. In this experiment, we also introduced baseline trials by manipulating the referential alternatives available across participants. Participants viewed either two simple objects (baseline), two complex objects (baseline), or a simple and a complex object (critical).\\
+
+\subsubsection{Results}
+In the critical alternatives condition, participants selected the complex referent significantly more often when they saw a long word compared to short word ($t(134) = 2.44, p<.05$, $d=.42$; Fig.\ \ref{fig:experimental_data}). There was no linguistic difference in the baseline conditions (complex-complex: $t(106) = -1.07, p=.29$; simple-simple: $t(94) = 0.88, p=.38$).
+
+\subsection{Experiment 2}% real objects (12)
+The results from Experiment 1 suggest that adults have a complexity bias when interpreting the meaning of a novel word. In Experiment 2, we further explored this bias using more naturalistic stimuli for the objects. Instead of geons, we presented participants with pictures of real objects that had been normed for visual complexity. 
+
+\subsubsection*{Methods} \hspace*{\fill} \\
+{ \it Participants. } Ninety-two adults were recruited from Amazon Mechanical Turk. Thirty-three participants were excluded for participating in related experiments. \\
+{ \it Stimuli. } 
+The object stimuli were taken from a set of images normed for complexity. In the norming task, we presented participants with 10 randomly selected novel objects from the full set of 60. For each object, participants were asked, ``How complicated is this object?," and then indicated their response using a slider scale.  Ratings were collected from 60 participants. A second sample of 60 participants gave ratings that were highly correlated with those of the first sample, $r=.94$. Figure  \ref{fig:exp3_stimuli} shows all images sorted by complexity.
+
+In the present experiment, 11 images from the bottom quartile of the normed objects and 15 from the top quartile were selected as the simple and complex objects (Fig. \ref{fig:exp3_stimuli}). The linguistic stimuli were the same as in Exp.\ 1.
+
+
+{ \it Procedure. } 
+The procedure was identical to the betting procedure used in Exp.\ 1b, with the exceptions that each participant completed only a single critical trial and there were no baseline conditions.\\
+
+\subsubsection{Results}
+As in Experiment 1, participants selected the complex referent significantly more often in the long word condition compared to the short word condition ($t(57) = 3.54, p<.001$, $d=.92$; Fig.\ \ref{fig:experimental_data}). 
+
+% kids
+\subsection{Experiment 3}
+Experiments 1 and 2 suggest that adults have a complexity bias when inferring the meaning of a novel word. Given evidence that a complexity bias is present in the lexicon, the ability to adopt a complexity bias in the moment of reference could potentially help constrain  referential uncertainty  for young language learners. In Experiment 3, we explored whether preschool age children adopt a complexity bias in an iPad adaptation of Experiment 2.\\
+
+\subsubsection*{Methods} \hspace*{\fill} \\
+%\subsubsection*{Methods}\\
+{ \it Participants. } We recruited 108 children (60 girls) from a nursery school at Stanford University and the San Jose Children's Discovery Museum (36 3-year-olds, $M$= 3;8; 36 4-year-olds, $M$= 4;5; 36 5-year-olds, $M$= 5;5). \\
+{ \it Stimuli. } 
+The object and linguistic stimuli were identical to those used in Experiment 2. \\
+{ \it Procedure. } 
+The procedure was identical to Experiment 2 with a few changes necessary to adapt the experiment for children. Children first completed a training phase to gain familiarity with  the iPad's touchscreen. They were then introduced to a puppet named Furble and told that  ``he speaks a different language from us. He has some toys that will look familiar, but he has lots of funny-looking toys, too. I need you to help me pick Furble's toys. Furble's going to say a word, and you're going to pick which toy you think the word is for." Children were then shown a display with two images, and the experimenter  asked the child in child-directed prosody to select a referent using one of three naming frames (``Can you find the [label]?,'' ``Where's the [label]?,"  or ``Can you pick the [label]?").
+
+We manipulated word length within subject. Children completed 12 trials: four trials with long words, four trials with short words, and four trials with familiar words. Familiar word trials involved a familiar word and two familiar objects. These were included to familiarize children with the task of reference selection. Order of trials was randomized with the constraint that two familiar trials always appeared first.
+
+\subsubsection{Results}
+ Figure \ref{fig:experimental_data} (right) illustrates the proportion of children selecting the complex referent in the short and long word conditions. Five percent of trials were excluded in cases where the child had difficulty operating the iPad, or where there were technical difficulties.  Across the three age groups, a complexity bias emerged only in 5-year-olds.
+
+To test the reliability of this difference, we ran a generalized linear mixed model predicting object selection as an interaction between condition (long or short word) and age with random effects of participant and trial number. There was a main effect of age ($\beta=-0.40$, $p <.01$), indicating that children were overall more likely to select the complex  referent with increasing age. There was also a reliable interaction between age and condition ($\beta=0.38$, $p <.05$). The effect of condition was not significant.
+
+We  ran a series of paired {\it t}-tests to examine response differences between conditions for each age group (3s, 4s, and 5s). There was a reliable difference between conditions for the 5-year-old age group ($t(35) =2.35, p<.05$, $d=.48$), but not the younger groups. These results suggest that older, but not younger, preschoolers have an adult-like bias to map longer words onto more complex referents.
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale = .35]{figs/exp3_stimuli.pdf}
+\end{center}
+\caption{Sorted display of novel objects normed for complexity.  Top left object corresponds to the lowest-rated object, and the bottom right object corresponds to the highest-rated object. Objects from the bottom (red) and top (blue) quartile were used as stimuli in Exp.\ 2 and 3.}
+\label{fig:exp3_stimuli}
+\end{figure}
+
+
+%%%%%%%%% General Discussion %%%%%%%%% 
+\section {General Discussion}
+A number of theories of communication predict that longer utterances should be associated with more complex meanings in the moment of language interpretation. We explored this prediction at the level of words.  Using two sources of data --- correlational evidence within actual spoken languages and experimental evidence with novel words --- we found evidence that longer words tend to be associated with more complex referents.  
+
+While both sources of evidence reveal a complexity bias in the pattern of observable data, each has different implications for the origins of the bias. In particular, each piece of evidence points to the emergence of a complexity  bias at a different timescale \cite{mcmurray2012}. The corpus evidence suggests that the bias may be grammaticalized in the lexicon (language change timescale). The experimental work with children suggests that a complexity bias could shape children's learning through the process of word learning (language acquisition timescale). And, the experimental work with adults suggests that a complexity bias  operates during individual episodes of language use (pragmatic timescale).
+
+How, if at all, are complexity biases at these three timescales related? Three broad hypotheses are consistent with our findings: A complexity bias (1) is innately given, (2) emerges as an artifact of the emergence of language, or (3) emerges from communicative pressures.  Below we outline these alternatives in more detail.
+
+
+\hspace*{.3 cm}{ \it 1.\ The Innate Bias Hypothesis. } One  explanation of our data is that humans have an  innate bias to map long words to complex referents. Under this hypothesis, a cognitive bias would lead to a complexity bias in the moment of language use. Over time, this behavioral regularity might become a probabilistic rule,  becoming ``grammaticalized'' into the language.  A challenge for this hypothesis is accounting for why a behavioral bias was not observed in young preschoolers in Experiment 3. Nonetheless, it has been argued in the case of other innate constraints that early age of onset is not a necessary condition for innateness \cite<e.g.,>{markman1992constraints}.
+
+\hspace*{.3 cm}{ \it 2.\ The Efficient Naming Hypothesis. } A second class of hypotheses posits that the complexity bias in the lexicon emerged independently of communicative pressures. To understand one variant of this hypothesis, consider the following fable: At the beginning of linguistic time, names were assigned to objects by length, starting with the shortest. Objects were named in the order that they were observed. Since more frequent  (i.e.\ higher probability and hence likely less complex, see Introduction) objects  tended to be observed earlier, these objects received shorter names, relative to the less frequent objects that were encountered later. This story provides one possible account of the emergence of a complexity bias over the language change timescale.
+
+Under this hypothesis, there are several ways to account for a pragmatic in-the-moment complexity bias. One possibility is that the lexical bias and the in-the-moment bias are the result of independent causal processes: the lexical bias may be the result of an efficient naming strategy, while the in-the-moment complexity bias may be the product of  general pragmatic reasoning. 
+
+An alternative possibility is that  the  in-the-moment bias emerged from a generalization, or overhypothesis \cite{kemp2007}, based on observations about the lexicon. That is, given experience with a lexicon that contains a regularity to map longer words to more complex meanings, learners might have induced a complexity  regularity about the lexicon. Thus, when faced with a novel word, speakers might apply this bias as a probabilistic heuristic about the meaning of the word. An overhypothesis account of the behavioral data has the advantage that it is able to account for the development  in an in-the-moment complexity bias in preschoolers. Under this account, preschoolers might not show this behavioral bias because they have not yet observed enough data to induce a complexity overhypothesis.
+
+\hspace*{.3 cm}{ \it 3.\ The Communicative Pressure Hypothesis. } A final possibility is that humans are predisposed to consider the intentions of others \cite{tomasello2005understanding}. This predisposition leads to pragmatic reasoning in the moment of language use. As argued by \citeA{horn1984}, one type of inference that might be guided by pragmatic reasoning is that a costlier (i.e.\ longer) utterance is more likely to refer to a more complex meaning. Thus, under this hypothesis, domain-general pragmatic reasoning may underly an in-the-moment complexity bias. Over time, this in-the-moment bias may become grammaticalized, leading to a complexity bias in the lexicon.
+
+A variant of this hypothesis is that an in-the-moment behavioral bias might be the product of both an underlying pragmatic inference and an overhypothesis about a complexity regularity in the lexicon. This possibility is similar to one account of a different, well-studied bias in word learning \cite{lewis2013b}: the mutual exclusivity bias. The mutual exclusivity bias is the tendency for children to map a novel word onto a novel object. In this work, we suggest that the mutual exclusivity behavior may emerge from both an in-the-moment pragmatic inference (the speaker would have used the known word to refer to a known object if that was the intended referent,  and so the novel word must refer to the novel object) and an overhypothesis about the structure of the lexicon (a 1-1 mapping between words and concepts).  We argued that processes at both timescales may jointly contribute to mutual exclusivity behavior. 
+
+
+
+In conclusion, our work provides the first  analysis of the relationship between utterance length and referent complexity at the level of words. We find evidence suggesting that a complexity bias is present in the lexicon and that speakers make use of this regularity in a word learning task. On grounds of parsimony, we favor the Communicative Pressure Hypothesis as an account of these data. However, future work is needed to more fully understand the relationship between complexity biases at different timescales.
+
+
+\section{Acknowledgments}
+We would like to thank the staff and families at the Bing Nursery School and San Jose Children's Discovery Museum.
+
+\bibliographystyle{apacite}
+
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+
+\bibliography{biblibrary.bib}
+\end{document}

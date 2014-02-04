@@ -1,0 +1,11 @@
+Exclusions codes used for coding videos:
+
+*load: One of the pictures was on the screen longer than the other due, or not at all, due to loading issues
+
+*click-switch: The child changed their guess because an initial click wasn't registered by the iPad
+
+*listen: The child did not listen until the end of the word before making their selection
+
+*click-through: Repeated clicking on a picture caused the subsequent round to be skipped over without any word being spoken
+
+*hard case: Miscellaneous; for example, when parents were being invasive (this happened once at the museum) or when a child had lots of trouble picking a picture, so experimenter had to tell them that it didn't really matter 
