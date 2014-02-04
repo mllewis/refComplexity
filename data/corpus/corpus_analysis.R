@@ -1,4 +1,4 @@
-# Corpus analysis for Cogsci2014 Referential Complexity paper (Lewis & Frank)
+# Corpus analysis for Cogsci2014 Referential Complexity paper (Lewis, Sugarman, and Frank)
 #
 # This script reproduces the statistical analyses for all four corpora (part 1), and 
 # reproduces the plot presented in the paper (part 2).

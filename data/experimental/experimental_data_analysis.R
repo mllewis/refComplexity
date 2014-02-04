@@ -1,4 +1,4 @@
-# Experimental data analysis for Cogsci2014 Referential Complexity paper (Lewis & Frank)
+# Experimental data analysis for Cogsci2014 Referential Complexity paper (Lewis, Sugarman, and Frank)
 #
 # Data for 3 adult experiments are saved as 1 file (refComplex_adult.csv), 
 # and data for kid experiment as a second file (refComplex_kid.csv).
