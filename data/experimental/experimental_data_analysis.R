@@ -43,7 +43,7 @@ getSummary <- function(D){
   summary_bet <- merge(summary_bet1, summary_bet2) 
   summary_bet$cill <- summary_bet$complex_proport - summary_bet$err   
   summary_bet$ciul <- summary_bet$complex_proport + summary_bet$err
-  summary_bet$err <- NULL                          
+  #summary_bet$err <- NULL                          
   metaD <- rbind.fill(summary_bet, summary_fc)
   metaD <- metaD[!is.na(metaD$condition),] # remove empty exps
   return(metaD)
