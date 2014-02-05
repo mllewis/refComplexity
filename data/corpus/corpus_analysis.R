@@ -2,7 +2,7 @@
 #
 # This script reproduces the statistical analyses for all four corpora (part 1), and 
 # reproduces the plot presented in the paper (part 2).
-
+# 
 rm(list=ls())
 
 library(RColorBrewer)
@@ -11,8 +11,14 @@ library(RColorBrewer)
 bm.partial<-function(x,y,z) {round((cor(x,y, use="complete.obs")-cor(x,z, use="complete.obs")*cor(y,z, use="complete.obs"))/
                                      sqrt((1-cor(x,z, use="complete.obs")^2)*(1-cor(y,z, use="complete.obs")^2)),4)}
 
+setwd('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/Papers/refComplex_CogSci2014/data/corpus/')
+
 ##(1) ANALYSIS FOR FOUR CORPORA
- 
+
+# surpirsal data
+surprisals = read.table('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus/ngrampy/BNC_Kneser-Ney_surprisals/English-KNN-H-2.txt', header= T)
+surprisals3 = read.table('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus/ngrampy/BNC_Kneser-Ney_surprisals/English-KNN-H-3.txt', header= T)
+
 ## (1) MRC (Wilson, 1988)
 norms = read.csv("MRC_corpus.csv",header=TRUE)
 freqs = read.table("SUBTLEXusDataBase.txt",header=TRUE)
@@ -20,6 +26,10 @@ freqs = read.table("SUBTLEXusDataBase.txt",header=TRUE)
 # --add frequency data --
 index <- match(norms$word, freqs$Word)
 norms$freq <- freqs$Lg10WF[index]
+
+# --add surprisal data --
+index <- match(norms$word, surprisals$word)
+norms$surp_2 <- surprisals$surprisal[index]
 
 #concreteness
 c_E_cp = cor.test(norms$mrc.phon,norms$mrc.conc, use="complete.obs")
@@ -31,7 +41,7 @@ pc_E_cl = bm.partial(norms$mrc.nlet,norms$mrc.conc,norms$freq)
 c_E_cs = cor.test(norms$mrc.syl,norms$mrc.conc, use="complete.obs")
 pc_E_cs = bm.partial(norms$mrc.syl,norms$mrc.conc,norms$freq)
 
-summary(lm(norms$mrc.nlet ~ norms$mrc.conc + norms$freq))
+summary(lm(norms$mrc.nlet ~ norms$mrc.conc + norms$freq + norms$surp_2))
 
 #familiarity
 c_E_fp = cor.test(norms$mrc.phon,norms$mrc.fam, use="complete.obs")
@@ -44,7 +54,7 @@ c_E_fs = cor.test(norms$mrc.syl,norms$mrc.fam, use="complete.obs")
 pc_E_fs =bm.partial(norms$mrc.syl,norms$mrc.fam,norms$freq)
 
 summary(lm(norms$mrc.nlet ~ norms$mrc.fam))
-summary(lm(norms$mrc.nlet ~ norms$mrc.fam + norms$freq))
+summary(lm(norms$mrc.nlet ~ norms$mrc.fam + norms$freq + norms$surp_2))
 
 #imageability
 c_E_ip = cor.test(norms$mrc.phon,norms$mrc.imag, use="complete.obs")
@@ -56,7 +66,7 @@ pc_E_il = bm.partial(norms$mrc.nlet,norms$mrc.imag,norms$freq)
 c_E_is = cor.test(norms$mrc.syl,norms$mrc.imag, use="complete.obs")
 pc_E_is = bm.partial(norms$mrc.syl,norms$mrc.imag,norms$freq)
 
-summary(lm(norms$mrc.nlet ~ norms$mrc.imag + norms$freq))
+summary(lm(norms$mrc.nlet ~ norms$mrc.imag + norms$freq + norms$surp_2))
 
 # correlation between frequency and familiartiy
 cor.test(norms$mrc.fam,norms$freq, use="complete.obs")
@@ -121,11 +131,36 @@ b <- b[b$Bigram == 0,]# get rid of two word lemmas
 index <- match(b$Word, freqs$Word)
 b$logfreq <- freqs$Lg10WF[index]
 
+# --add surprisal data --
+index <- match(b$Word, surprisals$word)
+b$surp_2 <- surprisals$surprisal[index]
+
+index <- match(b$Word, surprisals3$word)
+b$surp_3 <- surprisals3$surprisal[index]
+
+
 c_C_cl = cor.test(b$Length,b$Conc.M)
 pc_C_cl = bm.partial(b$Length,b$Conc.M,b$logfreq)
 
 summary(lm(b$Length ~ b$Conc.M))
 summary(lm(b$Length ~ b$Conc.M + b$logfreq))
+
+summary(lm(b$Length ~ b$Conc.M + b$logfreq + b$surp_2))
+summary(lm(b$Length ~ b$Conc.M + b$surp_2))
+cor.test(b$surp_2,b$Conc.M)
+
+summary(lm(b$Length ~ b$Conc.M + b$logfreq + b$surp_3))
+summary(lm(b$Length ~ b$Conc.M + b$surp_3))
+cor.test(b$surp_3,b$Conc.M)
+
+bm.partial(b$Length,b$Conc.M,b$surp_3)
+
+cor.test(b$surp_3,b$logfreq)
+
+cor.test(b$surp_3,b$Length)
+bm.partial(b$Length,b$logfreq,b$surp_3)
+
+
 
 
 
