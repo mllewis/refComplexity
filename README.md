@@ -1,4 +1,4 @@
-refComplex-cogsci
+refComplexity
 =================
 
 Writeup, data and analysis scripts for cogsci 2014 paper (Lewis, Sugarman, and Frank).
