@@ -11,17 +11,17 @@ library(RColorBrewer)
 bm.partial<-function(x,y,z) {round((cor(x,y, use="complete.obs")-cor(x,z, use="complete.obs")*cor(y,z, use="complete.obs"))/
                                      sqrt((1-cor(x,z, use="complete.obs")^2)*(1-cor(y,z, use="complete.obs")^2)),4)}
 
-setwd('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/Papers/refComplex_CogSci2014/data/corpus/')
+setwd('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus')
 
 ##(1) ANALYSIS FOR FOUR CORPORA
 
 # surpirsal data
-surprisals = read.table('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus/ngrampy/BNC_Kneser-Ney_surprisals/English-KNN-H-2.txt', header= T)
+surprisals2 = read.table('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus/ngrampy/BNC_Kneser-Ney_surprisals/English-KNN-H-2.txt', header= T)
 surprisals3 = read.table('/Documents/GRADUATE_SCHOOL/Projects/ref_complex/corpus/ngrampy/BNC_Kneser-Ney_surprisals/English-KNN-H-3.txt', header= T)
 
 ## (1) MRC (Wilson, 1988)
-norms = read.csv("MRC_corpus.csv",header=TRUE)
-freqs = read.table("SUBTLEXusDataBase.txt",header=TRUE)
+norms = read.csv("mrc_database/MRC_corpus.csv",header=TRUE)
+freqs = read.table("mrc_database/SUBTLEXusDataBase.txt",header=TRUE)
 
 # --add frequency data --
 index <- match(norms$word, freqs$Word)
@@ -121,26 +121,34 @@ pc_F_il = bm.partial(d$length, d$IMAGE_Mean, log(d$FREQ_Mean))
 
 summary(lm(d$length ~ d$IMAGE_Mean+ log(d$FREQ_Mean)))
 
-
 ## (4) Concretness  (Brysbaert et al., 2013)
-b <- read.csv("brysbaert_corpus.csv",header=TRUE)
+b <- read.csv("brysbaert_database/brysbaert_corpus.csv",header=TRUE)
 b <- b[b$Word != "",] # get rid of empty rows
 b <- b[b$Bigram == 0,]# get rid of two word lemmas
 
 # --add frequency stats --
+freqs$highfreq[1:25,000]
 index <- match(b$Word, freqs$Word)
 b$logfreq <- freqs$Lg10WF[index]
 
 # --add surprisal data --
-index <- match(b$Word, surprisals$word)
-b$surp_2 <- surprisals$surprisal[index]
+surprisals2 <- surprisals2[order(-surprisals2$context.count),] #reorder freqs
+surprisals2$highfreq =  FALSE # only look at high frequency
+surprisals2$highfreq[1:25000] = TRUE
+index <- match(b$Word, surprisals2$word)
+b$surp_2 <- surprisals2$surprisal[index]
+b$highfreq <- surprisals2$highfreq[index]
 
 index <- match(b$Word, surprisals3$word)
 b$surp_3 <- surprisals3$surprisal[index]
 
-
-c_C_cl = cor.test(b$Length,b$Conc.M)
-pc_C_cl = bm.partial(b$Length,b$Conc.M,b$logfreq)
+#all words (doesn't replicate piantadosi)
+#length and concreteness
+cor.test(b$Length,b$Conc.M) #-.4
+cor.test(b$Length,b$surp_3) #-.37
+cor.test(b$Length,b$logfreq) #-.48
+bm.partial(b$Length,b$Conc.M,b$logfreq) #-.37
+bm.partial(b$Length,b$Conc.M,b$surp_3) #-.39
 
 summary(lm(b$Length ~ b$Conc.M))
 summary(lm(b$Length ~ b$Conc.M + b$logfreq))
@@ -160,8 +168,14 @@ cor.test(b$surp_3,b$logfreq)
 cor.test(b$surp_3,b$Length)
 bm.partial(b$Length,b$logfreq,b$surp_3)
 
+#most frequent words
+b_hi <- b[b$highfreq==TRUE,]
+summary(lm(b_hi$Length ~ b_hi$Conc.M + b_hi$logfreq + b_hi$surp_2))
+bm.partial(b_hi$Length,b_hi$Conc.M,b_hi$surp_2) #-.39
 
-
+cor.test(b_hi$Length,b_hi$Conc.M) #-.37
+cor.test(b_hi$Length,b_hi$surp_2) #27
+cor.test(b_hi$Length,b_hi$logfreq) #-.48
 
 
 ##(2) MAKE PLOT
